@@ -1,0 +1,53 @@
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import axes3d
+import numpy as np
+from matplotlib import cm
+
+def rev(x):
+    return 1/float(x)
+def main2d():
+	x_axis = range(1, 100, 1)
+	y_axis = map(rev, x_axis)
+	
+	
+	#y_axis = 1/x_axis
+	#print y_axis
+	##
+	#
+	lines, = plt.plot(x_axis, y_axis, 'r--', label ='lines')
+	#plt.setp(lines, color='r', linewidth=2.0)
+	#
+	plt.ylabel('Quality/Noise')
+	plt.xlabel('Noise')
+	#
+	plt.show()
+
+
+def contour():
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    length =  100 
+    X1 = range(1,length,1)
+    Y1 = map(rev, X1)
+    X, Y = np.meshgrid(X1, Y1)
+    print X
+    print "done" 
+    print Y
+#    Z = [] 
+#    Z.append(1)
+#    Z = [] 
+#    Z = [] 
+#    for i in range(len(X)):
+#        Z[0] = (X[i], Y[i]))
+#    print Z
+#    cset = ax.contour(X, Y, Z, cmap=cm.coolwarm) 
+#    plt.ylabel('Quality/Noise')
+#    plt.xlabel('Noise')
+#    ax.clabel(cset, fontsize=9, inline=1)
+#    #plt.zlabel('blah')
+#    #
+#    plt.show()
+#
+
+#main2d()
+contour()

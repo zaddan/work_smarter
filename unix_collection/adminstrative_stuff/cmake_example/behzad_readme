@@ -1,0 +1,8 @@
+to use cmake:
+    1: make the CMakeLists.txt
+    2. mkdir build_folder(or whatever build folder you want to name it)
+    3. go to the build_folder (cd build_folder)
+    4. cmake .. (reference the CMakeLists.txt by typing cmake ..)
+    5. in your build folder, you should see a make file
+    6. run the make file
+

@@ -1,0 +1,3 @@
+#"to invoke matlab:"
+cd /usr/local/packages/matlab_2015a/bin
+./matlab

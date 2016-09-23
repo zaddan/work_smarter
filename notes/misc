@@ -1,0 +1,12 @@
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#---------guide::: calculating psnr in matlab
+#to calculate psnr between two yuv, use the yuvpsnr with the following format
+yuvpsnr('./JM/YUV_files/stefan_cif.yuv', './JM/YUV_files/stefan_cif_dec.yuv', 352,288,'420','y')
+#refer to he following webpage
+#http://www.mathworks.com/matlabcentral/fileexchange/12455-psnr-of-yuv-videos
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#
+#
+#
+#
+#

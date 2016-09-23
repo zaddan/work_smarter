@@ -1,0 +1,96 @@
+#to run something on evry file with a specific property (using find to find them and then execute the comman on them"
+find . -name "*.pyc" -exec git rm -f {} \;
+
+
+#if you want to search for a string and replace it in a bunch of files in a directory:
+grep -rl 'stringToReplace' ./ | xargs sed -i 's/stringToReplace/stringToReplaceWith/g'
+
+
+# ---- running pycallgraph
+normally you would run:
+pycallgraph graphviz -- filename (I believe this only makes an outputfile name with the name of pycallgraph.png") to change the name of the outut:
+pycallgraph graphviz -o output_file_name input_file_name 
+
+but the pic is usually too big to fit properly, thus resulting in an error
+thus instead, type the following command
+pycallgraph graphviz -f svg -o output_file_name input_file_name 
+
+# ---- using tee
+command |tee -a output_file_name
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---- passing arguements of a previous command to next
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---- using args
+simple example:
+consider that you are trying to rm all the files whose name start with a specific string ( such as "to")
+find . -name "to*" |xargs rm 
+
+As you see, we use xargs to pass the argument of the previous command to the next one. 
+Note: you might be asking why can't we just pipe the result.
+ALthough, this is a nice observation, it is wrong. We can use piping with "|" only with the commands that accept STDIN. 
+Note: there is a difference between STDIN and command line arguments. some commands require stdin (which they get by "< inputfile" or by user typing the input when the program asks for it. This is very different than command line arguments which are parsed at the beginning and read.
+If the commands of interests uses command line arguments instead of stdin, we can't get away by only using "|". For example grep uses both
+stdin and commandline arguments, Thus you can feed in either one. Thus, find . -name "to*" |grep somestring   works. 
+To feed in the output of previous commands to the next ones, we need to use xargs. THis program converts stdin to commandline. Thus, the following:
+find . -name "to*"|xargs rm. xargs convert the stdin provided by find . -name "to*" to command line and feed it to rm
+
+Note: how to deal with cases where we have couple of inputs after xargs. For example with mv:
+cat someFile|xargs -I{} mv
+as you see we need to add -I{} to tell xargs which symbol to use as a place holder and the rest is just list indexing
+
+this would only work if each line contains the source and destination address of "mv source destination"
+other wise xargs can not split a string to pices and pass the pieces, for example the following wouldn't work
+cat someFile|xargs -I{} mv {0} {1}
+instead, we should use shell itself in the following manner:
+var=(`cat someFile`);mv ${var[0]} ${var[1]} 
+Note: (make sure the ` is inside the parenthsis. and also you use ; instead of piping symbole
+
+Final remarks: only use xargs if you are passing one argument. you can not break the arguments to pieces and pass them around. instead
+use shell for such things. 
+# ---- using `command`
+we can also use `command` to implement the command on the spot. thus:
+rm `find . -name "to*"
+
+
+# ---- coloring the output
+# use the color + command to color the errors(the down side is that raw_input
+# in python does not show the string)
+
+Note: alias don't get parameters thus, define a function to be able to use it
+
+# ---- get and copy and open the file. usefull when you want to work in parallel
+use vimc to get a copy of a file and then modify it
+
+
+# ---- 
+# to download without sudo access
+there is no good way that I have found. emailed andrew and waiting to get an anwwer.
+
+# ---- 
+# installing when we can use config
+to be able to install locally, when configuring "./configure --prefix=/absolutepathof your homepage/.local/"
+then make
+then make install
+
+#install with pip as a user
+pip install --user package 
+
+
+#---how to look up the processes you are running
+ps aux|grep behzad
+
+#----no grep
+grep -v (stuf)
+
+#---how to send out error to tee as well
+python run_tool.py |& tee log
+
+
+#---only seend out error to a file
+ls - garbage 3>&1 1>/dev/null 2>&3- | tee blah.txt
+
+#---python modules are found where the PYTHONPATH is defined (in bashrc)
+
+
+

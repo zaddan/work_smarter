@@ -1,0 +1,145 @@
+VI Mode bindings
+
+
+    VI Insert Mode functions
+
+    "C-D"    -> vi-eof-maybe
+    "C-H"    -> backward-delete-char
+    "C-I"    -> complete
+    "C-J"    -> accept-line
+    "C-K"    -> kill-line
+    "C-L"    -> clear-screen
+    "C-M"    -> accept-line
+    "C-N"    -> next-history
+    "C-P"    -> previous-history
+    "C-Q"    -> quoted-insert
+    "C-R"    -> reverse-search-history
+    "C-S"    -> forward-search-history
+    "C-T"    -> transpose-chars
+    "C-U"    -> unix-line-discard
+    "C-V"    -> quoted-insert
+    "C-W"    -> unix-word-rubout
+    "C-Y"    -> yank
+    "C-["    -> vi-movement-mode
+    " " to "~"    -> self-insert
+    "C-?"    -> backward-delete-char
+
+    VI Command Mode functions
+
+    "C-D"  -> vi-eof-maybe
+    "C-E"  -> emacs-editing-mode
+    "C-G"  -> abort
+    "C-H"  -> backward-char
+    "C-J"  -> accept-line
+    "C-K"  -> kill-line
+    "C-L"  -> clear-screen
+    "C-M"  -> accept-line
+    "C-N"  -> next-history
+    "C-P"  -> previous-history
+    "C-Q"  -> quoted-insert
+    "C-R"  -> reverse-search-history
+    "C-S"  -> forward-search-history
+    "C-T"  -> transpose-chars
+    "C-U"  -> unix-line-discard
+    "C-V"  -> quoted-insert
+    "C-W"  -> unix-word-rubout
+    "C-Y"  -> yank
+    "C-["  -> abort
+    " "    -> forward-char
+    "#"    -> vi-comment
+    "$"    -> end-of-line
+    "%"    -> vi-match
+    "&"    -> vi-tilde-expand
+    "*"    -> vi-complete
+    "+"    -> down-history
+    ","    -> vi-char-search
+    "-"    -> previous-history
+    "."    -> vi-redo
+    "/"    -> vi-search
+    "0"    -> beginning-of-line
+    "1" to "9"    -> vi-arg-digit
+    ";"    -> vi-char-search
+    "="    -> vi-complete
+    "?"    -> vi-search
+    "@"    -> is undefined
+    "A"    -> vi-append-eol
+    "B"    -> vi-prev-word
+    "C"    -> vi-change-to
+    "D"    -> vi-delete-to
+    "E"    -> vi-end-word
+    "F"    -> vi-char-search
+    "I"    -> vi-insert-beg
+    "N"    -> vi-search-again
+    "P"    -> vi-put
+    "R"    -> vi-replace
+    "S"    -> vi-subst
+    "T"    -> vi-char-search
+    "U"    -> revert-line
+    "W"    -> vi-next-word
+    "X"    -> backward-delete-char
+    "Y"    -> vi-yank-to
+    "\"    -> vi-complete
+    "^"    -> vi-first-print
+    "_"    -> vi-yank-arg
+    "a"    -> vi-append-mode
+    "b"    -> vi-prev-word
+    "c"    -> vi-change-to
+    "d"    -> vi-delete-to
+    "e"    -> vi-end-word
+    "f"    -> vi-char-search
+    "h"    -> backward-char
+    "i"    -> vi-insertion-mode
+    "j"    -> next-history
+    "k"    -> prev-history
+    "l"    -> forward-char
+    "n"    -> vi-search-again
+    "r"    -> vi-change-char
+    "s"    -> vi-subst
+    "t"    -> vi-char-search
+    "u"    -> undo
+    "w"    -> vi-next-word
+    "x"    -> vi-delete
+    "y"    -> vi-yank-to
+    "|"    -> vi-column
+    "~"    -> vi-change-case 
+
+
+
+old table:
+
+    C-w            delete last word (insert mode)
+
+    h              move cursor one character to left
+    j              next line in history
+    k              previous line in history 
+    l              move cursor one character to right
+    w              move cursor one word to right
+    b              move cursor one word to left
+    0              move cursor to beginning of line
+    $              move cursor to end of line
+
+        <ESC>          switch to 'normal' mode  
+    i              insert to left of current cursor position
+    I              insert at beginning of line
+    a              append to right of current cursor position
+    A              append to end of line
+    dw             delete current word
+    cw             change current word
+    r              change current character
+    ~              change case (upper-, lower-) of current character
+
+    dd             delete current line
+    D              delete portion of current line to right of the cursor
+    x              delete current character
+    ma             mark currrent position
+    `a             go back to the marked position
+    p              dump out at current place your last deletion (``paste'')
+
+    u              undo the last command 
+    .              repeat the last command 
+   
+    /              search history forwards
+    ?              search history backwards
+    n              next item (during search)
+    N              previous item (during search)
+    

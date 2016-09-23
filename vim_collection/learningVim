@@ -1,0 +1,75 @@
+to tab forward and backward a whole line use >> and << respectively
+
+use abolish vim for search and replace while keeping the case
+
+use gguide to delimit the guide
+
+
+use ,v  and ,h for splitting windows
+
+use ,s for search for the word under the cursor
+
+splitting
+:nnoremap <Leader>v :vsplit 
+
+:nnoremap <Leader>f :split 
+
+mapping the escape key:
+mapped escaped jj
+keep in mind that for the visual mode, I use ii instead of jj 
+
+I have remapped 00 to a
+
+use ,p  to switch paste no paste on and off
+use guide for commenting
+use fguide for full guid
+
+
+use nerdTree. 
+different ways to use it. call vim in a directory. or if you already have vim open, call :NERDTree. then use enter to select or use s or i to split the window with the file where the cursor is on
+
+use easymotion. for now the leader is set to ' if you want to change it, go to the bundle and look for <Leader><Leader> line. I have comment it and replaced it. for now if you want to select a word use ''w and for lines use '' then the direction that you want to do. so ''j or ''k
+
+applying tx to the existing text:
+1.select the text and press gq. However, the problem with gq is that it ignores
+the line breaks and merges the lines. To avoid this type the following in your
+file: :g/^/norm gqq
+
+
+search patters:
+    ^ beginning
+    use .* for anythin not just *. 
+
+the following executees gq_ on every line that is a comment
+:g/.*#/normal gq_
+the following executes gqq on every line.
+:g/^/normal gqq
+
+commenting:
+use ,cc and ,cu for comment and uncommenting. the plug in is nerdcommenter
+
+pathgen:
+to install any package for vim, just go to .vim/bundle and clone the git repo
+
+use pyl for entering the knowlege file in the python_collection
+
+
+Note: to force shell to use the vim keystrokes, I have made a 
+file with the name of .inputrc in ~/ folder
+Note: to be able to copy from vim using mouse, hold down shift
+
+
+Note: using ctags
+make sure you use ctag
+Use ctags -R to tag the whole directory. Then you can use ctags on that directory
+use <C-]> to jump to a definition
+you can jump back to the very first line that you were in useing <C-t>
+
+use <Leader>m to implement a recorded command in visual mode(the plug in had a bug
+so stopped using it)instead, to be able to imlement a recorded key stroke in visual mode,
+after selection, type :normal then @(and the registername)
+use s for two character easy motion
+
+#csope
+to use cscope, first you need to generate the db for it. use cscope -b -R  command to generate this data base
+type :cs help in vim. There are tons of usefull mappings 

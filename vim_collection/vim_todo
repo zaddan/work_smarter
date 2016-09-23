@@ -1,0 +1,5 @@
+figure out and use cscope
+use <C-I> and other directions instead of arrows. This avoids switching back and forth
+between between normal mode and insert mode
+why recording doesn't work properly
+change the color of the the terimnal when vim is in different mode

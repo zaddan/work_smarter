@@ -1,0 +1,2 @@
+hs (to get the history of cmds with their postion to be used with fc)
+fc -n first(neg number) last(neg number)

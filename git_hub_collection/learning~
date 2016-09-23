@@ -1,0 +1,25 @@
+to figure out how to set up a public key refer to:
+https://help.github.com/articles/generating-ssh-keys/
+
+
+telling git who you are
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+
+to get rid of 
+
+Pushing to Git returning Error Code 403 fatal: HTTP request failed
+http://stackoverflow.com/questions/7438313/pushing-to-git-returning-error-code-403-fatal-http-request-failed
+
+
+
+
+how to get the content of the repo without pulling the root directory(when you want to have a repoin the already existing dir)
+    if the existing folder is empty:  
+	cd $desired_dir;git clone $address_of_the_repo .;
+    else
+        git init
+        git remote add origin PATH/TO/REPO
+        git fetch
+        git checkout -t origin/master

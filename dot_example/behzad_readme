@@ -1,0 +1,2 @@
+to generate a png from a dot file type following:
+    dot -Tpng $filename.dot -o $file_name.png

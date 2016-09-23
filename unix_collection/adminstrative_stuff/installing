@@ -1,0 +1,13 @@
+//****************INSTALLING A PKG WITH CMAKE LOCALLY******************
+installing with cmake in user area
+cmake -DCMAKE_INSTALL_PREFIX=/usr .. //this allows you to install locally
+
+usually we need to do make, make install after generating the makefile using above step
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//****************PYTHON******************
+PATH="$HOME/.local/bin:$PATH"
+echo PATH="$HOME/.local/bin:$PATH" > $HOME/.profile
+pip install --user packageName

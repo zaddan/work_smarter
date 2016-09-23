@@ -1,0 +1,27 @@
+dbFileName = ????
+tableName = ????
+propsName = ["operandOne", "operandTwo", "deltaOperandOne", "deltaOperandTwo", "deltaOutput"]
+propsType = ????
+propList = [ operandOne,  operandTwo,  deltaOperandOne,  deltaOperandTwo,  deltaOutput]
+
+# ----body 
+propsTypeConverted = [convert_python_types_to_sqlite(argType) for argType in propsType]
+propsValuesConverted = [convert_python_values_to_sqlite_compatible_values(argType,value) for argType,value in zip(propsType,propList)]
+
+# ---- creating  
+createDB(dbFileName, tableName, propsName, propsTypeConverted, propsValuesConverted)
+
+
+# ---- retreivingprops, propNames, _= retrieveDB(dbFileName , tableName)
+operandOne, operandTwo, deltaOperandOne, deltaOperandTwo, deltaOutput  = [impose_type(propsType[index], prop) for index,prop in enumerate(props)]
+
+
+print operandOne 
+
+print operandTwo 
+
+print deltaOperandOne 
+
+print deltaOperandTwo 
+
+print deltaOutput 

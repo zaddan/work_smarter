@@ -1,0 +1,12 @@
+digraph G {
+  EditorInChief -> Guido;
+  EditorInChief -> FrenchTeam;
+  EditorInChief -> DutchTeam;
+  EditorInChief -> ContactPersonForEnglish;
+  EditorInChief -> GermanTeam;
+  FrenchTeam -> Iznogood;
+  DutchTeam -> Floris;
+  DutchTeam -> Guus;
+  ContactPersonForEnglish -> Guido;
+  GermanTeam -> Unknown;
+}

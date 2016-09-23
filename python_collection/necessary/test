@@ -1,0 +1,5 @@
+operandOne = [23,25]                                                                            
+operandTwo = [12,14]                                                                            
+deltaOperandOne = [3,2]                                                                         
+deltaOperandTwo = [5,3]                                                                         
+deltaOutput = [4,6] 

@@ -1,0 +1,36 @@
+
+//********************* SOME BACKGRAOUND INFO LIBRARIES AND **********************
+Note: libs can be statically (.a) or dynamically linked(.so). 
+    static: literally put in the output binary
+    dynamic: only a pointer to the object file of the lib is placed. 
+    when, linkiing with .a(static libs), the lib itself is included in the executable, which means that the .a file doesn't need to be present at run time (the loader doesn't need it)
+    when linking with *.so lib, only a pointer to the lib is present in the main obj file, which means that the .so file is needed by the loader at run time (that's why we need to update the
+    LD_LIBRARY_PATH to have the *.so files) so we can run.
+
+
+libs are needed both by linker and the loader(if *.so). 
+we provide the linker with the *.so location using -L(and the name of the lib).
+we need to provide the compiler with the -I folders, so that the compiler can use place holders
+for certain functions defined in the lib. Thus we need -I and -L(for binaries).
+Some libraries come in packages. To be able to link the whole package, the lib usually come with a folder called pkg-config. This is there to get the -L and -I of the lib easily. To do so:
+    cd to pkg-config.
+    pkg-config --libs (filename).cv  (get the -L args)
+    pkg-congi --cflags (filename).cv (get the -I args)
+
+
+
+//*********************HOW TO COMPILE,LINK, AND RUN (THE LOADER STEP)**********
+    "get the -I and -L "
+    cd to pkg-config. (usually somewhere in the installed folder of the library)
+    pkg-config --libs (filename).cv  (get the -L args)
+    pkg-congi --cflags (filename).cv (get the -I args)
+    "for running"
+    export LD_LIBRARY_PATH=/home/polaris/behzad/open_cv(this the lib path)/lib:$LD_LIBRARY_PATH
+    
+    ./a.out 
+
+
+//*********************REFRENCE)**********
+    "get the -I and -L "
+for making and using *.so and *.a look at this webset:
+http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html

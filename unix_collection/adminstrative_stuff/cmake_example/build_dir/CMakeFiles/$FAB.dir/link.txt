@@ -1,0 +1,1 @@
+/usr/bin/c++       "CMakeFiles/\$FAB.dir/my_src/test1.cpp.o" "CMakeFiles/\$FAB.dir/my_src/test2.cpp.o"  -o "\$$FAB" -rdynamic 
