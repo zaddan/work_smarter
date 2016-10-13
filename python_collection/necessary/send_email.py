@@ -1,5 +1,9 @@
-def send_email(user, pwd, recipient, subject, body):
+import sys
+def send_email(user, pwd, recipient, subject, body, activate=True):
     import smtplib
+    
+    if not(activate):
+        return
 
     gmail_user = user
     gmail_pwd = pwd
@@ -11,6 +15,7 @@ def send_email(user, pwd, recipient, subject, body):
     # Prepare actual message
     message = """From: %s\nTo: %s\nSubject: %s\n\n%s
     """ % (FROM, ", ".join(TO), SUBJECT, TEXT)
+    
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.ehlo()
@@ -22,4 +27,6 @@ def send_email(user, pwd, recipient, subject, body):
     except:
         print "failed to send mail"
 
-send_email("behzadboro@gmail.com", "+1mastermind+", "behzad_boro@gmail.com", "doneWithRunning", "nothing")
+#subject = sys.argv[1]
+#body = sys.argv[2]
+#
